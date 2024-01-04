@@ -1,5 +1,5 @@
 import "./ExpenseDetails.css";
-function ExpenseDetails(props) {
+const ExpenseDetails = (props) => {
   return (
     <div className="expense-item__description">
       <div className="expense-item__location">{props.location}</div>
