@@ -4,15 +4,16 @@ import Card from "../UI/Card.js";
 const Expenses = (props) => {
   return (
     <Card className="expenses">
-      {props.items.map((item) => (
-        <ExpenseItem
-          key={item.id}
-          title={item.title}
-          amount={item.amount}
-          date={item.date}
-          location={item.location}
-        />
-      ))}
+        {props.items.map((item) => (
+            <ExpenseItem
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            amount={item.amount}
+            date={item.date}
+            location={item.location}
+            />
+        ))}
     </Card>
   );
 }
