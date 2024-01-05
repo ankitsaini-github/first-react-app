@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Expenses from "./components/Expense/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const expensesArr = [
+
+  const InitialExpensesArr = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -26,11 +28,18 @@ function App() {
       location: "Bangalore",
     },
   ];
+  
+  const [ExpenseArray,SetExpenseArray]=useState(InitialExpensesArr);
+
+  const AddExpenseHandler=(NewExpenseData)=>{
+    console.log(NewExpenseData);
+    SetExpenseArray([...ExpenseArray,NewExpenseData]);
+  };
   return (
     <div>
       <h2>EXPENSE TRACKER (REACT APP)</h2>
-      <NewExpense/>
-      <Expenses items={expensesArr} />
+      <NewExpense onAddNewExpense={AddExpenseHandler}/>
+      <Expenses items={ExpenseArray} />
     </div>
   );
 }
