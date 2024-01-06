@@ -7,3 +7,13 @@
     justify-content: space-around;
     height: 10rem;
   }
+  @media (max-width: 580px){
+    .chart{
+      flex-wrap:wrap;
+      flex-direction: row;
+      height: 14rem;
+    }
+    .chartbar{
+      flex-grow: 1;
+    }
+  }
