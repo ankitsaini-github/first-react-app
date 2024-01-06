@@ -11,6 +11,13 @@ const ExpenseList = (props) => {
     );
   }
   
+  let totalExpense =''
+  if(props.items.length > 1){
+    totalExpense= <h3 className="expenses-list__total">
+    Total Expenses : {props.items.length}
+  </h3>
+  }
+
   return (
     <ul className="expenses-list">
       {props.items.map((expense) => (
@@ -26,6 +33,7 @@ const ExpenseList = (props) => {
     {props.items.length===1 && <h2 className="expenses-list__fallback">
              Only single Expense here. Please add more...
          </h2>}
+         {totalExpense}
     </ul>
   );
 };
